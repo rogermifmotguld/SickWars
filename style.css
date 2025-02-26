@@ -1,0 +1,17 @@
+/* Gör så att canvasen fyller hela skärmen */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+/* Canvas täcker hela skärmen */
+#gameCanvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* 100% av bredden */
+    height: 100vh; /* 100% av höjden */
+}
