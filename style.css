@@ -1,4 +1,4 @@
-/* Gör så att canvasen täcker hela skärmen */
+/* Canvasen ska fylla hela skärmen och vara svart */
 body, html {
     margin: 0;
     padding: 0;
@@ -6,12 +6,12 @@ body, html {
     background-color: black;
 }
 
-/* Canvas ska fylla hela skärmen */
 #gameCanvas {
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw; /* 100% av bredden */
-    height: 100vh; /* 100% av höjden */
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
 }
