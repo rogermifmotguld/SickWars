@@ -9,7 +9,11 @@
 <body>
     <canvas id="gameCanvas"></canvas>
 
-    <!-- Viktigt: Ladda hinder först, spelaren efteråt -->
+    <!-- Ladda socket.io för multiplayer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.js"></script>
+
+    <!-- Ladda spelets kod i rätt ordning -->
+    <script src="game.js"></script>
     <script src="obstacle.js"></script>
     <script src="player.js"></script>
 </body>
