@@ -1,58 +1,28 @@
-// Konstanter
-const MAX_OBSTACLES = 5; // Max 5 hinder samtidigt
-const OBSTACLE_LIFETIME = 60000; // 60 sekunder
-let obstacles = []; // Lista över hinder
+console.log("✅ obstacle.js har laddats!");
 
-// **Skapa ett slumpmässigt hinder**
-function createRandomObstacle() {
+let obstacles = [];
+
+function createTestObstacle() {
     return {
-        x: Math.random() * (canvas.width - 100), // Slumpmässig position
-        y: Math.random() * (canvas.height - 150) + 100,
-        width: Math.random() * 100 + 50,
-        height: Math.random() * 50 + 20,
-        createdAt: Date.now() // Tidpunkt då hindret skapades
+        x: 100,
+        y: 200,
+        width: 50,
+        height: 20,
     };
 }
 
-// **Uppdatera hindren: Ta bort gamla och skapa nya**
-function updateObstacles() {
-    const now = Date.now();
-    
-    // Behåll bara hinder som är yngre än 60 sekunder
-    obstacles = obstacles.filter(obstacle => now - obstacle.createdAt < OBSTACLE_LIFETIME);
+// Skapa ett testhinder
+obstacles.push(createTestObstacle());
+console.log("✅ Testhinder skapat:", obstacles);
 
-    // Skapa nya hinder om det finns plats
-    while (obstacles.length < MAX_OBSTACLES) {
-        obstacles.push(createRandomObstacle());
-    }
-}
-
-// **Rita hindren**
+// Rita hindret
 function drawObstacles() {
-    ctx.strokeStyle = "white";
-    ctx.lineWidth = 3;
-
+    ctx.fillStyle = "white";
     obstacles.forEach(obstacle => {
-        // Rita geometrisk form (rektangel)
-        ctx.strokeRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
-
-        // Rita vitt streck inuti formen
-        ctx.beginPath();
-        ctx.moveTo(obstacle.x + 5, obstacle.y + obstacle.height / 2);
-        ctx.lineTo(obstacle.x + obstacle.width - 5, obstacle.y + obstacle.height / 2);
-        ctx.stroke();
+        ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
     });
 }
 
-// **Kolla kollision med hinder**
-function checkCollision(player, obstacle) {
-    return (
-        player.x + player.width > obstacle.x &&
-        player.x < obstacle.x + obstacle.width &&
-        player.y + player.height > obstacle.y &&
-        player.y < obstacle.y + obstacle.height
-    );
-}
-
-// **Starta hinder-uppdatering var 60:e sekund**
-setInterval(updateObstacles, 1000);
+// Rita hindret direkt för att testa
+drawObstacles();
+console.log("✅ Hinder ritat!");
