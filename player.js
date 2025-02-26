@@ -1,8 +1,18 @@
-console.log("✅ player.js har laddats!");
+console.log("✅ player.js uppdaterad!");
 
-const canvas = document.getElementById("gameCanvas");
-const ctx = canvas.getContext("2d");
+let player = {
+    x: 200,
+    y: 300,
+    width: 30,
+    height: 50,
+    color: "blue"
+};
 
-ctx.fillStyle = "red";
-ctx.fillRect(50, 50, 100, 100);
-console.log("✅ Röd fyrkant ritad!");
+// Rita spelaren
+function drawPlayer() {
+    ctx.fillStyle = player.color;
+    ctx.fillRect(player.x, player.y, player.width, player.height);
+}
+
+drawPlayer();
+console.log("✅ Spelare ritad!");
