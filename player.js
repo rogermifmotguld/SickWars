@@ -1,18 +1,15 @@
-console.log("✅ player.js uppdaterad!");
+console.log("✅ player.js har laddats!");
 
-let player = {
-    x: 200,
-    y: 300,
-    width: 30,
-    height: 50,
-    color: "blue"
-};
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
 
-// Rita spelaren
-function drawPlayer() {
-    ctx.fillStyle = player.color;
-    ctx.fillRect(player.x, player.y, player.width, player.height);
+if (!canvas || !ctx) {
+    console.error("❌ FEL: Canvas hittades inte!");
+} else {
+    console.log("✅ Canvas hittades!");
 }
 
-drawPlayer();
-console.log("✅ Spelare ritad!");
+// Test: Rita en röd fyrkant
+ctx.fillStyle = "red";
+ctx.fillRect(50, 50, 100, 100);
+console.log("✅ Röd fyrkant ritad!");
