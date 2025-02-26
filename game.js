@@ -1,16 +1,17 @@
-console.log("✅ game.js har laddats!");
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer-spel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
 
-// Hämta canvas och kontext
-const canvas = document.getElementById("gameCanvas");
-const ctx = canvas.getContext("2d");
-
-if (!canvas || !ctx) {
-    console.error("❌ FEL: Canvas hittades inte!");
-} else {
-    console.log("✅ Canvas hittades!");
-}
-
-// Test: Rita en blå bakgrund
-ctx.fillStyle = "blue";
-ctx.fillRect(0, 0, canvas.width, canvas.height);
-console.log("✅ Blå bakgrund ritad!");
+    <!-- Ladda skript i rätt ordning -->
+    <script src="game.js"></script>
+    <script src="obstacle.js"></script>
+    <script src="player.js"></script>
+</body>
+</html>
