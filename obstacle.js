@@ -4,10 +4,10 @@ let obstacles = [];
 
 function createTestObstacle() {
     return {
-        x: 100,
-        y: 200,
-        width: 50,
-        height: 20,
+        x: 150,
+        y: 250,
+        width: 60,
+        height: 20
     };
 }
 
@@ -23,6 +23,6 @@ function drawObstacles() {
     });
 }
 
-// Rita hindret direkt för att testa
+// Test: Rita direkt
 drawObstacles();
 console.log("✅ Hinder ritat!");
