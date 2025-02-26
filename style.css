@@ -1,4 +1,4 @@
-/* Gör så att canvasen fyller hela skärmen */
+/* Gör så att canvasen täcker hela skärmen */
 body, html {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@ body, html {
     background-color: black;
 }
 
-/* Canvas täcker hela skärmen */
+/* Canvas ska fylla hela skärmen */
 #gameCanvas {
     display: block;
     position: absolute;
